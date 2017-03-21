@@ -33,6 +33,9 @@ $g_taskSubmitButton.on('click', addTask);
 $g_clearTasksLink.on('click', clearAllTasks);
 
 
+
+
+
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++
     Functions
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -60,9 +63,13 @@ function addTask() {
 }
 
 
+
+
 function getTasks() {
   $.ajax(g_getTaskSettings).then(renderTasks);
 }
+
+
 
 
 function renderTasks(data, status, xhr) {
@@ -91,15 +98,20 @@ function renderTasks(data, status, xhr) {
 }
 
 
+
+
 function deleteTask(task) {
   var id = task._id;
-  var url = g_rootURL + id;
+  var taskUrl = g_rootURL + id;
   var deleteSettings = {
     type: 'DELETE',
-    url: url
+    url: taskUrl
   };
   $.ajax(deleteSettings).then(getTasks);
 }
+
+
+
 
 function clearAllTasks() {
   $.ajax(g_getTaskSettings).then(function(data, status, xhr){
@@ -110,18 +122,29 @@ function clearAllTasks() {
 }
 
 
+
+
 function completeTask(task) {
   var id = task._id;
-  var url = g_rootURL + id;
+  var taskUrl = g_rootURL + id;
   task.complete = !task.complete;
+
+  var taskUpdate = {
+    task: task.task,
+    complete: task.complete
+  };
 
   var putSettings = {
     type: 'PUT',
-    url: url
+    contentType: 'application/json',
+    url: taskUrl,
+    data: JSON.stringify(taskUpdate)
   };
 
-  $.ajax(deleteSettings).then(getTasks);
+  $.ajax(putSettings).then(getTasks);
 }
+
+
 
 
 // do the jQuery

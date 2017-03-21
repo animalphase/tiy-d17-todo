@@ -9,5 +9,15 @@
   li {
     padding: 1rem;
     border: 1px solid grey;
+    position: relative;
   }
+
+  li button {
+
+  }
+}
+
+.delete-task-button {
+  position: absolute;
+  right: 0;
 }
