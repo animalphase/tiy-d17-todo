@@ -1,0 +1,58 @@
+/* Include libraries =================== */
+@import "node_modules/bourbon/app/assets/stylesheets/bourbon";
+@import "node_modules/bourbon-neat/core/neat";
+
+
+/* Define color variables =================== */
+// $color-primary: #B2B7FC;
+// $color-white: #FFFBFF;
+// $color-background: #E8DEFE;
+// $color-background-b: #CFD7FC;
+// $color-accent-yellow: #FFFBD8;
+//
+// $color-borders: $color-primary;
+// $color-shadow: $color-primary;
+//
+
+/*
+w-hite:
+#FFFBFF
+y-ellow accent:
+#FFFBD8
+p-ink fill:
+#FEF4FF
+#FCE4FB
+#FBE5F9
+p-urple outline:
+#B2B7FC
+p-urple fill:
+#CECAFC
+#E2D7FD
+
+
+bg gradient:
+#E8DEFE
+#CFD7FC
+*/
+
+
+// $color-text-primary: #566270;
+// $color-text-secondary: #b3b6b9;
+// $color-link: $color-text-primary;
+// $color-link-hover: #222;
+
+
+
+
+/* Define mixins =================== */
+@mixin one-line-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* Import partials =================== */
+@import "base";
+@import "common-elements";
+@import "extras";

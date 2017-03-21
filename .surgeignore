@@ -1,0 +1,14 @@
+node_modules/
+styles/
+main.css.map
+.tern-project
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
