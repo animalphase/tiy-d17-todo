@@ -1,23 +1,116 @@
 .todo-list {
-  width: 30rem;
+  position: relative;
+  max-width: 50rem;
   margin: 5rem auto;
+  padding: 4rem;
+  background: $color-white;
+  box-shadow: 0 .2rem .8rem -.1rem rgba($color-shadow, .8);
+
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
   }
   li {
-    padding: 1rem;
-    border: 1px solid grey;
+    margin: 0;
+    border-bottom: .1rem solid $color-borders;
     position: relative;
+    line-height: 1;
+    font-size: 1.9rem;
+    padding: .8em 0;
   }
 
   li button {
-
+    appearance: none;
+    background: none;
+    border: none;
+    color: $color-text-primary;
   }
+}
+
+.complete-task-button {
+  padding-right: 1.2rem;
 }
 
 .delete-task-button {
   position: absolute;
   right: 0;
+  opacity: .3;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.complete {
+  text-decoration: line-through;
+  font-style: italic;
+  color: rgba($color-text-primary, .5);
+
+  .complete-task-button {
+    color: rgba($color-text-primary, .5);
+  }
+}
+
+.hide-complete .complete {
+  display: none;
+}
+
+#task-form {
+  display: flex;
+  #task-input {
+    flex: 1;
+    appearance: none;
+    line-height: 1;
+    font-size: 1.9rem;
+    padding: .8em .6em;
+    border: none;
+    border-bottom: .1rem solid $color-borders;
+    background: none;
+    color: $color-text-input;
+    @include placeholder {
+      color: tint($color-text-input, 40%);
+    }
+    &:focus {
+      outline: none;
+      border-color: $color-text-input;
+    }
+  }
+  #task-submit-button {
+    appearance: none;
+    line-height: 1;
+    font-size: 1.9rem;
+    padding: .8em .8em;
+    background: $color-accent-yellow;
+    border: .1rem solid shade($color-accent-yellow, 10%);
+    color: shade($color-accent-yellow, 50%);
+    &:focus {
+      outline: none;
+      border-color: $color-text-input;
+    }
+  }
+}
+
+.filter-tasks-link {
+  position: absolute;
+  top: -2.4rem;
+  right: 0;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+.clear-tasks-link {
+  position: absolute;
+  bottom: -2.4rem;
+  left: 0;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+@media only screen and (max-width: 500px) {
+  .todo-list {
+    li {
+      font-size: 1.6rem;
+    }
+  }
 }

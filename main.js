@@ -11,6 +11,8 @@ var $g_taskUl = $('#task-list');
 var $g_taskInput = $('#task-input');
 var $g_taskSubmitButton = $('#task-submit-button');
 var $g_clearTasksLink = $('.clear-tasks-link');
+var $g_filterTasksLink = $('.filter-tasks-link');
+var $g_showAllTasks = true;
 
 var g_rootURL = 'http://tiny-za-server.herokuapp.com/collections/moon-todo/';
 
@@ -31,6 +33,7 @@ var exampleTask = {
 
 $g_taskSubmitButton.on('click', addTask);
 $g_clearTasksLink.on('click', clearAllTasks);
+$g_filterTasksLink.on('click', filterTasks);
 
 
 
@@ -79,14 +82,15 @@ function renderTasks(data, status, xhr) {
     var $taskItem = $('<li>');
     $taskItem.html(task.task);
 
-    var $deleteTaskButton = $('<button class="delete-task-button">X</button>');
+    var $deleteTaskButton = $('<button class="delete-task-button"><i class="fa fa-trash-o" aria-hidden="true"></i></button>');
     $taskItem.append($deleteTaskButton);
 
-    var $completeTaskButton = $('<button class="complete-task-button">☐</button>');
+    var $completeTaskButton = $('<button class="complete-task-button"></button>');
     if (task.complete === true){
-      $completeTaskButton.html('☑︎');
+      $completeTaskButton.html('<i class="fa fa-check-square-o" aria-hidden="true"></i>');
+      $taskItem.addClass('complete');
     } else {
-      $completeTaskButton.html('☐');
+      $completeTaskButton.html('<i class="fa fa-square-o" aria-hidden="true"></i>');
     }
     $taskItem.prepend($completeTaskButton);
 
@@ -95,6 +99,7 @@ function renderTasks(data, status, xhr) {
     $deleteTaskButton.on('click', function(){deleteTask(task);});
     $completeTaskButton.on('click', function(){completeTask(task);});
   });
+  updateFilterView();
 }
 
 
@@ -145,6 +150,21 @@ function completeTask(task) {
 }
 
 
+
+function filterTasks() {
+  $g_showAllTasks = !$g_showAllTasks;
+  updateFilterView();
+}
+
+function updateFilterView() {
+  if($g_showAllTasks) {
+    $('.todo-list').removeClass('hide-complete');
+    $g_filterTasksLink.html('Hide Completed Tasks');
+  } else {
+    $('.todo-list').addClass('hide-complete');
+    $g_filterTasksLink.html('Show Completed Tasks');
+  }
+}
 
 
 // do the jQuery

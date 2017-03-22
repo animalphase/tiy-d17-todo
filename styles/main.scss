@@ -4,15 +4,21 @@
 
 
 /* Define color variables =================== */
-// $color-primary: #B2B7FC;
-// $color-white: #FFFBFF;
-// $color-background: #E8DEFE;
-// $color-background-b: #CFD7FC;
-// $color-accent-yellow: #FFFBD8;
-//
-// $color-borders: $color-primary;
-// $color-shadow: $color-primary;
-//
+$color-primary: #B2B7FC;
+$color-white: #FFFBFF;
+$color-background: #E8DEFE;
+$color-background-b: #CFD7FC;
+$color-accent-yellow: #FFFBD8;
+$color-accent-pink: #FCE4FB;
+
+$color-text-primary: $color-primary;
+$color-text-input: #f296ef;
+$color-link: $color-white;
+$color-link-hover: #222;
+
+$color-borders: tint($color-primary, 60%);
+$color-shadow: $color-primary;
+
 
 /*
 w-hite:
@@ -38,8 +44,7 @@ bg gradient:
 
 // $color-text-primary: #566270;
 // $color-text-secondary: #b3b6b9;
-// $color-link: $color-text-primary;
-// $color-link-hover: #222;
+
 
 
 

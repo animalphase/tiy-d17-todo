@@ -2,8 +2,8 @@ html {
   font-size: 0.625rem; /* 10px equivalent thanks to default of 16px */
   font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
-  // background: linear-gradient(to bottom, $color-background, $color-background-b);
-  // color: $color-text-primary;
+  background: linear-gradient(to bottom, $color-background, $color-background-b);
+  color: $color-text-primary;
   height: 100vh;
 
   * {
@@ -13,6 +13,7 @@ html {
 
 body {
   font-size: 1.6rem; /* 16px equivalent */
+  padding-bottom: 8rem;
 }
 
 h1 {
@@ -23,23 +24,29 @@ h1 {
 }
 
 a {
-  // color: $color-link;
+  color: $color-link;
   text-decoration: none;
-  transition: .1s ease all;
+  transition: .35s ease all;
+  text-shadow: 0 .1rem 0rem 0 rgba($color-shadow, 1) !important;
+  &:hover {
+    color: $color-link-hover;
+    transition: .1s ease all;
+  }
 }
 
-a:hover {
-  // color: $color-link-hover;
+button {
+  cursor: pointer;
+  transition: .35s ease all;
+  &:hover {
+    transition: .1s ease all;
+  }
 }
 
 
 
-
-
-
-
-
-
+header {
+  @include clearfix;
+}
 
 
 

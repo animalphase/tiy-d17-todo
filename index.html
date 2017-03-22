@@ -6,29 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
 
     <header>
       <h1>todos</h1>
-
     </header>
 
     <main>
       <div class="todo-list">
+
+        <a class="filter-tasks-link" href="#">Hide Completed</a>
+
         <form id="task-form" class="" action="#" method="post">
-          <input id="task-input" type="text" name="Task Input Field" value="" placeholder="Search for items or shops">
-          <button id="task-submit-button" type="submit" name="Submit task button">➕</button>
+          <input id="task-input" type="text" name="Task Input Field" value="" placeholder="new task…">
+          <button id="task-submit-button" type="submit" name="Submit task button"><i class="fa fa-plus" aria-hidden="true"></i></button>
         </form>
 
         <ul id="task-list">
 
         </ul>
 
-        <p><a class="clear-tasks-link" href="#">Clear Tasklist</a></p>
-
+        <a class="clear-tasks-link" href="#">Clear Tasklist</a>
       </div>
 
     </main>
