@@ -1,6 +1,7 @@
 html {
   font-size: 0.625rem; /* 10px equivalent thanks to default of 16px */
-  font-family: 'Fira Sans', sans-serif;
+  // font-family: 'Fira Sans', sans-serif;
+  font-family: $helvetica;
   font-weight: 400;
   background: linear-gradient(to bottom, $color-background, $color-background-b);
   color: $color-text-primary;
