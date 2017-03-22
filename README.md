@@ -20,3 +20,8 @@
 - jQuery
 - Sass
 - Bourbon
+
+### App planning
+
+
+![app planning and simple wireframe](extras/app planning and simple wireframe.png)
