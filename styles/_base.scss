@@ -27,10 +27,18 @@ a {
   color: $color-link;
   text-decoration: none;
   transition: .35s ease all;
-  text-shadow: 0 .1rem 0rem 0 rgba($color-shadow, 1) !important;
+  text-shadow:  0 .1rem 0 rgba($color-shadow, 1),
+                .1rem .1rem 0 rgba($color-shadow, 1),
+                0 .2rem 0 rgba($color-shadow, 1),
+                0 .2rem .8rem rgba(shade($color-shadow, 50%), .7);
+
   &:hover {
     color: $color-link-hover;
     transition: .1s ease all;
+    text-shadow: 0 0 0 rgba($color-shadow, 0),
+                  0 0 0 rgba($color-shadow, 0),
+                  0 0 0 rgba($color-shadow, 0),
+                  0 0 .2rem rgba($color-shadow, 0);
   }
 }
 

@@ -159,10 +159,10 @@ function filterTasks() {
 function updateFilterView() {
   if($g_showAllTasks) {
     $('.todo-list').removeClass('hide-complete');
-    $g_filterTasksLink.html('Hide Completed Tasks');
+    $g_filterTasksLink.html('<i class="fa fa-eye-slash" aria-hidden="true"></i> Hide Completed Tasks');
   } else {
     $('.todo-list').addClass('hide-complete');
-    $g_filterTasksLink.html('Show Completed Tasks');
+    $g_filterTasksLink.html('<i class="fa fa-eye" aria-hidden="true"></i> Show Completed Tasks');
   }
 }
 
