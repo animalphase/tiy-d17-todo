@@ -80,7 +80,7 @@ function renderTasks(data, status, xhr) {
   $g_taskUl.html('');
   data.forEach(function(task, i, array){
     var $taskItem = $('<li>');
-    $taskItem.html(task.task);
+    $taskItem.html('<span class="task-text">' + task.task + '</span>');
 
     var $deleteTaskButton = $('<button class="delete-task-button"><i class="fa fa-trash-o" aria-hidden="true"></i></button>');
     $taskItem.append($deleteTaskButton);
@@ -96,7 +96,7 @@ function renderTasks(data, status, xhr) {
 
     $g_taskUl.append($taskItem);
 
-    $deleteTaskButton.on('click', function(){deleteTask(task);});
+    $deleteTaskButton.on('click', function(){deleteTask(task, $taskItem);});
     $completeTaskButton.on('click', function(){completeTask(task);});
   });
   updateFilterView();
@@ -105,7 +105,7 @@ function renderTasks(data, status, xhr) {
 
 
 
-function deleteTask(task) {
+function deleteTask(task, $taskLi) {
   var id = task._id;
   var taskUrl = g_rootURL + id;
   var deleteSettings = {
@@ -113,6 +113,13 @@ function deleteTask(task) {
     url: taskUrl
   };
   $.ajax(deleteSettings).then(getTasks);
+  // $.ajax(deleteSettings).then(function(data, status, xhr){
+  //   if(status === 'success') {
+  //     $taskLi.remove();
+  //   } else {
+  //     console.log('ERROR: delete failed');
+  //   }
+  // });
 }
 
 
