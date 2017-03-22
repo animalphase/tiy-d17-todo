@@ -24,4 +24,4 @@
 ### App planning
 
 
-![app planning and simple wireframe](extras/app planning and simple wireframe.png)
+![app planning and simple wireframe](extras/app-planning-and-simple-wireframe.png)
